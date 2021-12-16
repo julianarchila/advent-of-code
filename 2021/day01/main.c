@@ -30,9 +30,15 @@ int main (int argc, char * argv[]){
 		insertArray(&a, n);
 	}
 
+  // list = [1,2,3,4,5]
+  // indz = [0,1,2,3,4]      len = 5   > 1
+
+
 	// iterate through array and check for increments
-	for (int i = 1; i < a.size; i++) {
-		if (a.array[i] > a.array[i-1]) {
+	for (int i = 0; i < a.size - 3; i++) {
+    int window1 = a.array[i] + a.array[i + 1] + a.array[i + 2];
+    int window2 = a.array[i + 1] + a.array[i + 2] + a.array[i + 3];
+		if (window1 < window2) {
 			increments_count++;
 		}
 	}
